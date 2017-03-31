@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+	 function getByclass( parent,aclass)
+	 {
+	 	var aresult=[];
+	 	var ele=parent.getElementsByTagName('*');
+	 	for(var i=0;i<ele.length;i++){
+	 		if(ele[i].className==aclass)
+	 		{
+	 			aresult.push(ele[i]);
+	 		}
+	 		return aresult;
+	 	}
+	 }
+</script>
+</head>
+<body>
+<input id="txt1" type="text" />
+<input id="btn1" type="button" value="按钮" />
+</body>
+</html>
