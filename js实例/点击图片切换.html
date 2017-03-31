@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript">
+	window.onload=function()
+	{
+		var oImg=document.getElementById("img1");
+		var arr=["img/5.jpg","img/6.jpg","img/7.jpg","img/4.jpg"];
+		var num=0;
+		oImg.onclick=function()
+		{
+			num++;
+			if(num==arr.length)
+			{
+				num=0;
+			}
+			oImg.src=arr[num];
+		}
+	}	
+	</script>
+</head>
+<body>
+	<img  id="img1" src="img/5.jpg" width="800" height="600"/>
+</body>
+</html>

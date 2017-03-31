@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+p { border:10px solid #ccc; background:#FFC; width:400px; padding:20px; font-size:16px; font-family:微软雅黑; }
+span { background:yellow; }
+</style>
+</head>
+<body>
+	<input type="text" />
+	<input type="text" />
+	<input type="button" value="替换" />
+	<p>豆瓣电影提供最新的电影介绍及评论包括上映影片的影讯查询及购票服务。你可以记录想看、在看和看过的电影电视剧,顺便打分、写影评。根据你的口味,豆瓣电影会推荐好...<br />记录你读过的、想读和正在读的书,顺便打分,添加标签及个人附注,写评论。根据你的口味,推荐适合的书给你。</p>
+	<script type="text/javascript">
+		var aInp = document.getElementsByTagName('input');
+		var oP = document.getElementsByTagName('p')[0];
+		aInp[2].onclick=function()
+		{
+			var str=aInp[0].value;
+			var newStr=aInp[1].value;
+			if(!str)return;
+			oP.innerHTML=oP.innerHTML.split(str).join("<span>"+newStr+"</span>");
+		}
+	</script>
+</body>
+</html>

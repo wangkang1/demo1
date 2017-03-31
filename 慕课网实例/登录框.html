@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+	*{ margin: 0;padding: 0; }
+	.head{ font-size: 12px;padding:6px 0 0 10px; }
+	#btn_box{width: 300px;height: 150px;background: #eee;border: 1px solid #ccc;position: absolute;;left: 50%;top: 50%;margin-left: -150px;margin-top: -75px;display:none ;}
+	#btn_box p{ height: 20px;border-bottom: 1px solid #ccc;font-size: 12px;padding: 6px 0 0 5px;font-weight:bold; }
+	#close{ width: 14px;height: 14px;position: absolute;right: 4px;top: 6px; }
+	</style>
+	<script type="text/javascript">
+		window.onload=function(){
+			var btn=document.getElementById("btn"),
+				btn_box=document.getElementById("btn_box"),
+				close=document.getElementById("close");
+				function addEvent(ele,type,hander){
+					if (ele.addEventListener) {
+						ele.addEventListener(type,hander,false);
+					}else if(ele.attachEvent){
+						ele.attachEvent("on"+type,hander);
+					}else{
+						ele["on"+type]=hander;
+									}
+					}
+                function showbtn(){
+                	
+                	btn_box.style.display="block";
+                }
+                function hidebtn(){
+                	btn_box.style.display="none";
+                }
+                addEvent(btn,"click",showbtn);
+                addEvent(close,"click",hidebtn);
+		}
+	</script>
+</head>
+<body>
+	<div class="head">你好!<input type="button" value="登录" id="btn"></div>
+	<div id="btn_box">
+		<p>用户登录</p><span id="close">X</span>
+	</div>
+</body>
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>一些小项目集合</title>
+	<style type="text/css">
+	body,h1,h2,h3,h4,h5,p,dl,dd,ul,ol,form,input,textarea,th,td,select { margin:0; padding:0; }
+	li { list-style:none; }
+	a { text-decoration:none; }
+	body {font:12px ;font-family:"微软雅黑"; }
+	.box{width: 650px;margin: 50px auto;}
+	#menu{border-color: #C4D5DF;border-style: solid;border-width: 0 1px 1px; }
+	#menu h2 { display:block; height: 48px;line-height: 48px;color:black;text-indent: 28px;border-top: 1px solid #C4D5DF;background: url(js实例/img/ico1.gif) no-repeat 15px center #0BCBF3;}
+	#menu .active { background:url(js实例/img/ico2.gif) no-repeat 10px center #08F642 ; color:#000; }
+	#menu .lis2 {display: none;}
+	#menu .lis2 li a{ display:block;height: 48px;line-height: 48px;background:#ffffff;color: #42556B;text-indent: 18px;border-top: 0px solid #ffffff;}
+	#menu .lis2 li a:hover{color:#f60;text-indent:30px}
+	p{ margin-top: 50px;text-indent: 250px;color: red;font-weight: bold; }
+	</style>
+	<script type="text/javascript">
+		window.onload = function ()
+	{
+	var oUl = document.getElementById('menu');
+	var aH2 = oUl.getElementsByTagName('h2');
+	var aUl = oUl.getElementsByTagName('ul');
+	var aLi = null;
+	var arrLi = [];	
+	for( var i=0; i<aH2.length; i++ ){
+		aH2[i].index = i;
+		aH2[i].onclick = function (){
+			
+			for( var i=0; i<aH2.length; i++ ){
+				if( i != this.index ){
+					aUl[i].style.display = 'none';
+					aH2[i].className = '';
+				}
+			}
+			if( this.className == '' ){
+				aUl[this.index].style.display = 'block';
+				this.className = 'active';
+			} else {
+				aUl[this.index].style.display = 'none';
+				this.className = '';
+			}
+		};
+	}
+	for( var i=0; i<aUl.length; i++ ){
+		aLi = aUl[i].getElementsByTagName('li');
+		for( var j=0; j<aLi.length; j++ ){
+			arrLi.push( aLi[j] );
+		}
+	}
+	
+	for( var i=0; i<arrLi.length; i++ ){
+		arrLi[i].onclick = function (){
+			
+			for( var i=0; i<arrLi.length; i++ ){
+				if( arrLi[i] !=this ){
+					arrLi[i].className = '';
+				}
+			}
+			if( this.className == '' ){
+				this.className = 'hover';
+			}else{
+				this.className = '';
+			}
+		};
+	}
+};
+	</script>
+</head>
+<body>
+<div class="box">
+<ul id="menu">
+	<li class="lis">
+  	<h2>百度前端技术学院练习</h2>
+    <ul class="lis2">
+    	<li><a  target="_blank" href="百度前端技术学院练习/定位和居中.html">定位和居中</a></li>
+    	<li><a target="_blank" href="百度前端技术学院练习/零基础html编程.html">零基础html编程</a></li>
+    	<li><a target="_blank" href="百度前端技术学院练习/零基础HTML及CSS编码.html">零基础HTML及CSS编码</a></li>
+    	<li><a target="_blank" href="百度前端技术学院练习/三栏式布局.html">三栏式布局</a></li>
+    	<li><a target="_blank" href="百度前端技术学院练习/通过HTML及CSS模拟报纸排版.html">通过HTML及CSS模拟报纸排版</a></li>
+  		<li><a  target="_blank"href="百度前端技术学院练习/科技网站.html">科技网站</a></li>
+    	<li><a  target="_blank"href="百度前端技术学院练习/js编码1.html">js编码</a></li>
+    </ul>
+  </li>
+	<li class="lis">
+  	<h2>仿站实例</h2>
+    <ul class="lis2">
+    	<li> <a target="_blank" href="仿站实例/index.html">电商网站</a></li>
+    	<li><a  target="_blank" href="仿站实例/index1.html">电商网站1</a></li>
+    	<li ><a target="_blank" href="仿站实例/优酷.html">优酷网站</a></li>
+    
+    
+    </ul>
+  </li>
+	<li class="lis">
+  	<h2>js实例</h2>
+    <ul class="lis2">
+    	<li ><a target="_blank" href="js实例/查找替换.html">查找替换</a></li>
+    	<li ><a target="_blank" href="js实例/QQ列表.html">QQ列表</a></li>
+    	<li ><a target="_blank" href="js实例/淡入淡出.html">淡入淡出</a></li>
+    	<li ><a target="_blank" href="js实例/点击闪烁.html">点击闪烁</a></li>
+    	<li ><a target="_blank" href="js实例/点击图片切换.html">点击图片切换</a></li>
+    	<li ><a target="_blank" href="js实例/多个淡入淡出效果.html">多个淡入淡出效果</a></li>
+    	<li ><a target="_blank" href="js实例/反选.html">反选</a></li>
+    	<li ><a target="_blank" href="js实例/放大镜.html">放大镜</a></li>
+    	<li ><a target="_blank" href="js实例/分享到.html">分享到</a></li>
+    	<li ><a target="_blank" href="js实例/缓冲运动.html">缓冲运动</a></li>
+    	<li ><a target="_blank" href="js实例/记价器.html">记价器</a></li>
+    	<li ><a target="_blank" href="js实例/均速运动停止.html">均速运动停止</a></li>
+    	<li ><a target="_blank" href="js实例/控制div属性.html">控制div属性</a></li>
+    	<li ><a target="_blank" href="js实例/留言框.html">留言框</a></li>
+    	<li ><a target="_blank" href="js实例/任务菜单.html">任务菜单</a></li>
+    	<li ><a target="_blank" href="js实例/收缩展开.html">收缩展开</a></li>
+    	<li ><a target="_blank" href="js实例/数字时钟.html">数字时钟</a></li>
+    	<li ><a target="_blank" href="js实例/图片切换.html">图片切换</a></li>
+    	<li ><a target="_blank" href="js实例/图片切换1.html">图片切换1</a></li>
+    	<li ><a target="_blank" href="js实例/拖拽.html">拖拽</a></li>
+    	<li ><a target="_blank" href="js实例/显示隐藏.html">显示隐藏</a></li>
+    	<li ><a target="_blank" href="js实例/星级评分.html">星级评分</a></li>
+    	<li ><a target="_blank" href="js实例/选项卡.html">选项卡</a></li>
+    	<li ><a target="_blank" href="js实例/运动框架练习.html">运动框架练习</a></li>
+    	<li ><a target="_blank" href="js实例/自定义滚动条.html">自定义滚动条</a></li>
+
+    </ul>
+  </li>
+  <li class="lis">
+  	<h2>慕课网实例</h2>
+    <ul class="lis2">
+    	<li ><a target="_blank" href="慕课网实例/登录框.html">登录框</a></li>
+    	<li ><a target="_blank" href="慕课网实例/下拉菜单.html">下拉菜单</a></li>
+   		<li ><a target="_blank" href="慕课网实例/抽奖.html">抽奖</a></li>
+    </ul>
+  </li>
+</ul>
+	<p>前端路漫漫 坚持！！</p>
+	</div>	
+</body>
+</html>
