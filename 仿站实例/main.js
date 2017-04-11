@@ -64,11 +64,11 @@ $(function(){
 		   $(".work li:eq(0)").appendTo($(".work ul"))
 		 })
 	 }
-	 	var timer=null	
-	     clearInterval(timer)
+	 	var t=null	
+	     clearInterval(t)
 		 timer=setInterval(scroll,2000);
 		 $(".work").hover(function (){
-		clearInterval( timer );
+		clearInterval( t );
 			
 		}, scroll);
 	//选项卡
@@ -95,31 +95,14 @@ $(function(){
 
 	//鼠标移动显示信息
 	(function(){
-		var nAv=$(".nav_t");
-		var nAvh=$(".nav_box_hover");
-		var num=0;
-		for( var i=0;i<nAv.length;i++)
-		{
-			nAv[i].index=i;
-		  
-		    	nAv.on("mouseover", function()
-			 {
-			 	$(this).hide();
-			 	num=this.index;
-			 	nAvh.eq(num).show();
-			 	return false 
-			 })
-		    
-			nAv.on("mouseout", function()
-			 {
-			 	num=this.index;
-			 	nAvh.eq(num).hide();
-			 	$(this).show();
-			 	
-			 });
-			
-		}
-       
+		var $nAv=$(".nav_t");
+		var $nAvh=$(".nav_box_hover");
+		$nAv.on('mouseover',function(){
+			$(this).hide().next().show();
+		});
+		$nAvh.on('mouseout',function(){
+			$(this).hide().prev().show();
+		});
 	})();
 	function scro()
 	{
