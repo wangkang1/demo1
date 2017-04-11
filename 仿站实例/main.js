@@ -66,7 +66,7 @@ $(function(){
 	 }
 	 	var t=null	
 	     clearInterval(t)
-		 timer=setInterval(scroll,2000);
+		 t=setInterval(scroll,2000);
 		 $(".work").hover(function (){
 		clearInterval( t );
 			
